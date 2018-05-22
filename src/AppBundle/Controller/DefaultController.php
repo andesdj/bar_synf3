@@ -21,10 +21,18 @@ class DefaultController extends Controller
      */
     public function nosotrosAction(Request $request)    {
         // replace this example code with whatever you need
-        return $this->render('frontal/index.html.twig', [
+        return $this->render('frontal/nosotros.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+
+
+
+
+
+      //*******************************************
+
+
 
     /**
      * @Route("/productos", name="productos")
