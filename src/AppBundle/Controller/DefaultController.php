@@ -50,17 +50,11 @@ class DefaultController extends Controller
       } else {
         return $this->redirectToRoute('homepage');
       }
-    
+
                 // return $this->render('frontal/plato.html.twig', array("plato"=>$plato));
     }
 
-
-
-
       //*******************************************
-
-
-
     /**
      * @Route("/productos", name="productos")
      */
