@@ -3,5 +3,92 @@
 Pagina principal
 {%endblock%}
 {% block contenido %}
-  Contenido INDEX
+
+
+<!-- SLIDER  -->
+
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url({{asset ('img/slider1.jpg')}}">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Fancy Dinner</h3>
+                <div class="h4">Cena elegante, de ambiente cálido y de calidad</div>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url({{asset ('img/slider2.jpg')}}">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Elegant  Dinner</h3>
+              <div class="h4">Celebra tus ocasiones especiales con nosotros</div>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url({{asset ('img/slider3.jpg')}}">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Casual Dinner </h3>
+              <div class="h4">Un lugar para salir de la rutina</div>
+            </div>
+          </div>
+          <!-- Slide Four - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url({{asset ('img/slider4.jpg')}}">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Vintage  lights </h3>
+              <div class="h4">Decoración elegante, clasica y de buen ambiente</div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+<!-- Fin SLIDER  -->
+
+    <!-- CONTAINER  -->
+    <div class="container">
+
+
+    <!-- TOp   Consulta de la DB -->
+    <div class="h1 my-4">Nuestro Top 3</div>
+ <!-- CAja con contenido de TOP -->
+    <div class="row">
+       {%for tapa in tapas %}
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="{{path('plato',{'id':tapa.id})}}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="{{path('plato',{'id':tapa.id})}}"> {{ tapa.nombre }}</a>
+            </h4>
+            <p class="card-text">{{ tapa.descripcion }}</p>
+            <p class="card-text">{{ tapa.ingredientes }}</p>
+          </div>
+        </div>
+      </div>
+
+
+
+  {% endfor %}
+    </div>
+    <!-- /.row -->
+    <!-- END PORTFOLIO -->
+
+
+
+  <!-- END Page container -->
+  </div>
 {%endblock%}

@@ -3,6 +3,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Tapa;
 
 class DefaultController extends Controller
 {
@@ -10,8 +11,15 @@ class DefaultController extends Controller
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)    {
-        // replace this example code with whatever you need
-        return $this->render('frontal/index.html.twig');
+      // Capturar el repositiorio de la tabla con la DB ,Tapa es la entidad q trae los datos
+       $repository = $this->getDoctrine()->getRepository(Tapa::class);
+       // finds *all* products trae todo
+      // $tapas = $repository->findAll();
+      //     para filtrar los recetas TOP se debe usar un findBY
+      $tapas = $repository->findByTop(1);
+
+//       var_dump($tapas);
+        return $this->render('frontal/index.html.twig', array("tapas"=>$tapas));
     }
 
     /**
@@ -27,9 +35,25 @@ class DefaultController extends Controller
      * @Route("/bares/{ciudad}", name="bares")
      */
     public function baresAction(Request $request, $ciudad="todos")    {
-        // replace this example code with whatever you need
         return $this->render('frontal/bares.html.twig', array("ciudad"=>$ciudad));
     }
+
+    /**
+     * @Route("/plato/{id}", name="plato")
+     */
+    public function platoAction(Request $request, $id=null)    {
+
+      if($id!=null){
+          $repository = $this->getDoctrine()->getRepository(Tapa::class);
+          $plato = $repository->find($id);
+          return $this->render('frontal/plato.html.twig', array("plato"=>$plato));
+      } else {
+        return $this->redirectToRoute('homepage');
+      }
+    
+                // return $this->render('frontal/plato.html.twig', array("plato"=>$plato));
+    }
+
 
 
 
