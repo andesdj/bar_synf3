@@ -23,13 +23,13 @@
                 <a class="nav-link" href="{{path('nosotros')}}">Nosotros</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="{{path('bares')}}" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Bares
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                  <a class="dropdown-item" href="#">Bogotá</a>
-                  <a class="dropdown-item" href="#">Cali</a>
-                  <a class="dropdown-item" href="#">Medellín</a>
+                  <a class="dropdown-item" href="{{path('bares', {'ciudad': 'bog'})}}">Bogotá</a>
+                  <a class="dropdown-item" href="{{path('bares', {'ciudad': 'cal'})}}">Cali</a>
+                  <a class="dropdown-item" href="{{path('bares', {'ciudad': 'med'})}}">Medellín</a>
                 </div>
               </li>
               <li class="nav-item">
@@ -44,8 +44,19 @@
       </nav>
       <!--FIN Menu de Navegacion -->
 
+          <!-- #CONTENIDO# -->
         {% block contenido %}{% endblock %}
+          <!-- #END CONTENIDO# -->
 
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; DJ ANDES 2018</p>
+          </div>
+          <!-- /.container -->
+        </footer>
+
+  <!-- END Footer -->
 
         <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

@@ -1,8 +1,84 @@
 {% extends 'base.html.twig '%}
-{% block title %}
-<h1>Nosotros</h1>
-<h3>Nuestro equipo</h3>
-{%endblock%}
+  {% block title %}
+    Nosotros
+  {%endblock%}
 {% block contenido %}
-  Nosotros
+  <div class="container">
+    <h1 class="mt-4 mb-3">Nosotros
+      <small></small>
+    </h1>
+    <!-- Image Header -->
+    <img class="img-fluid rounded mb-4" src="{{asset('img/nos.jpg')}}" alt="">
+    <!-- End Image Header -->
+
+    <!-- Marketing Icons Section -->
+
+    <h1 class="mt-4 mb-3">
+      <small>Team ANDES</small>
+    </h1>
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <h4 class="card-header">  <img class="img-fluid rounded mb-4" src="{{asset('img/andes.jpg')}}" alt=""></h4>
+          <div class="card-body">
+                  <h4 class="card-title">DJ ANDES</h4>
+            <p class="card-text">DJ ANDES aka EMPORIO AMG Music Engineer, DJ, Sunset hunter.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="">djandes@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <h4 class="card-header"> <img class="img-fluid rounded mb-4" src="{{asset('img/andes.jpg')}}" alt=""></h4>
+          <div class="card-body">
+          <h4 class="card-title">EMPORIO</h4>
+            <p class="card-text">DJ ANDES aka EMPORIO AMG Music Engineer, DJ, Sunset hunter</p>
+          </div>
+          <div class="card-footer">
+          <a href="#" class="">emporio@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+            <div class="card h-100 text-center">
+          <h4 class="card-header"> <img class="img-fluid rounded mb-4" src="{{asset('img/andes.jpg')}}" alt=""></h4>
+          <div class="card-body">
+                  <h4 class="card-title">AMG Project</h4>
+            <p class="card-text">DJ ANDES aka EMPORIO AMG Music Engineer, DJ, Sunset hunter</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="">amgproject@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
 {%endblock%}

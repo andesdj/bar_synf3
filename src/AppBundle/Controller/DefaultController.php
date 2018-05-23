@@ -11,9 +11,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)    {
         // replace this example code with whatever you need
-        return $this->render('frontal/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('frontal/index.html.twig');
     }
 
     /**
@@ -21,12 +19,17 @@ class DefaultController extends Controller
      */
     public function nosotrosAction(Request $request)    {
         // replace this example code with whatever you need
-        return $this->render('frontal/nosotros.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('frontal/nosotros.html.twig');
+
     }
 
-
+    /**
+     * @Route("/bares/{ciudad}", name="bares")
+     */
+    public function baresAction(Request $request, $ciudad="todos")    {
+        // replace this example code with whatever you need
+        return $this->render('frontal/bares.html.twig', array("ciudad"=>$ciudad));
+    }
 
 
 

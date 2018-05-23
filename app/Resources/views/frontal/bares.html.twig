@@ -1,0 +1,119 @@
+{% extends 'base.html.twig '%}
+  {% block title %}
+  Bares
+  {%endblock%}
+{% block contenido %}
+<div class="container">
+  <h1 class="mt-4 mb-3">Bares
+    <small></small>
+  </h1>
+
+
+{% if ciudad =='bog' or ciudad =='todos' %}
+<div class="row">
+  <!-- Map Column -->
+  <div class="col-lg-8 mb-4">
+    <!-- Embedded Google Map -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d40080.1743044515!2d-74.09998549440034!3d4.690386616238742!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1527042371434" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  <!-- Contact Details Column -->
+  <div class="col-lg-4 mb-4">
+    <h3>Bogotá</h3>
+    <p>
+      Direccion:
+      <br>Carrera 7 con 127, Usaquen
+      <br>
+    </p>
+    <p>
+      <abbr title="Phone">Phone</abbr>: (+57 1) 456-7890
+    </p>
+    <p>
+      <abbr title="Email">Email</abbr>:
+      <a href="mailto:bogota@djandes.com">bogota@djandes.com
+      </a>
+    </p>
+    <p>
+      <abbr title="Hours">Hours</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+    </p>
+  </div>
+</div>
+<!-- /.row -->
+{%endif%}
+
+
+{% if ciudad =='cal' or ciudad =='todos' %}
+<div class="row">
+  <!-- Map Column -->
+  <div class="col-lg-8 mb-4">
+    <!-- Embedded Google Map -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21266.267007708742!2d-76.53489224523749!3d3.3685736811430362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a6f0cc4bb3f1%3A0x1f0fb5e952ae6168!2sCali%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1527043425874" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  <!-- Contact Details Column -->
+  <div class="col-lg-4 mb-4">
+    <h3>Cali</h3>
+    <p>
+      Direccion:
+      <br>Carrera 100 15-10 Ciudad Jardin
+      <br>
+    </p>
+    <p>
+      <abbr title="Phone">Phone</abbr>: (+57 1) 456-7890
+    </p>
+    <p>
+      <abbr title="Email">Email</abbr>:
+      <a href="mailto:bogota@djandes.com">cali@djandes.com
+      </a>
+    </p>
+    <p>
+      <abbr title="Hours">Hours</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+    </p>
+  </div>
+</div>
+<!-- /.row -->
+{%endif%}
+
+
+{% if ciudad =='med' or ciudad =='todos' %}
+<div class="row">
+  <!-- Map Column -->
+  <div class="col-lg-8 mb-4">
+    <!-- Embedded Google Map -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9710.05697604707!2d-75.57237709971247!3d6.2171067474016635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428ef4e52dddb%3A0x722fd6c39270ac72!2sMedell%C3%ADn%2C+Antioquia!5e0!3m2!1ses!2sco!4v1527043451602" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  <!-- Contact Details Column -->
+  <div class="col-lg-4 mb-4">
+    <h3>Medellín</h3>
+    <p>
+      Direccion:
+      <br>Carrera 44 15-10,Poblado
+      <br>
+    </p>
+    <p>
+      <abbr title="Phone">Phone</abbr>: (+57 1) 456-7890
+    </p>
+    <p>
+      <abbr title="Email">Email</abbr>:
+      <a href="mailto:bogota@djandes.com">medellin@djandes.com
+      </a>
+    </p>
+    <p>
+      <abbr title="Hours">Hours</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+    </p>
+  </div>
+</div>
+<!-- /.row -->
+{%endif%}
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+{%endblock%}
