@@ -1,13 +1,20 @@
 {% extends 'base.html.twig '%}
+{% form_theme form 'form/platoForm.html.twig' %}
   {% block title %}
     Nuevo Plato
   {% endblock %}
 {% block contenido %}
 <div class="container">
-  <h1 class="mt-4 "> <strong>Nuevo Plato</strong>
+  <h1 class="mt-4 mb-3"> <strong>Nuevo Plato</strong>
     <small></small>
   </h1>
-    {{form_start(form)}}
-    {{form_widget(form)}}
-    {{form_end(form)}}
+
+  <div class="row">
+    <div class="col-md-8">
+        {{form_start(form)}}
+        {{form_widget(form)}}
+        {{form_end(form)}}
+    </div>
+  </div>
+</div>
 {% endblock %}

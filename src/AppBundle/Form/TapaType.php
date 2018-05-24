@@ -19,7 +19,7 @@ class TapaType extends AbstractType
         $builder
         ->add('nombre', TextType::class)
         ->add('descripcion', CKEditorType::class)
-        ->add('ingredientes', CKEditorType::class)
+        ->add('ingredientes', TextareaType::class)
         ->add('top')
         ->add('guardar', SubmitType::class, array('label'=>'Crear plato'))
                 ;
