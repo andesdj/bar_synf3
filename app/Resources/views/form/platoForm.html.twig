@@ -16,7 +16,7 @@
     {%- set type = type|default('text') -%}
     <input type="{{ type }}" class="form-control" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
     {%- if type == 'file' -%}
-      <img id="platoThumb" class="img-fluid" width="200px" src="" alt="">
+      <img id="platoThumb" class="img-thumbnail" width="200px" src="" alt="">
     {%- endif -%}
 {%- endblock form_widget_simple -%}
 {# FIN  personalizacion INPUT #}

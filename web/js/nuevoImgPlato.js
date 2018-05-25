@@ -15,11 +15,12 @@ return false;
 }
 function onChange(event){
   var file= event.target.files[0]
+  console.log(file.type)
   if(validarTIpos(file)){
     var mini=document.getElementById('platoThumb');
-        mini.src=window.URL.createObjectURL(file);
+    mini.src=window.URL.createObjectURL(file);
   } else {
 
   }
-  console.log(file);
+
 }
