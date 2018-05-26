@@ -25,8 +25,10 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla barandes.categoria: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla barandes.categoria: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
+REPLACE INTO `categoria` (`id`, `nombre`, `descripcion`, `foto`) VALUES
+	(1, 'Pescados y mariscos', '<p>Platos de Pescados y mariscos, pescados de mar, de Rio, comida mediterranea</p>', '54e75ea0345ba808ae8f3de9c1a415b1.jpeg');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 
 -- Volcando estructura para tabla barandes.tapa
