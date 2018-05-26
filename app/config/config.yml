@@ -39,8 +39,6 @@ twig:
     globals:
         plato_img: 'img/uploads/'
 
-
-
 # Doctrine Configuration
 doctrine:
     dbal:
