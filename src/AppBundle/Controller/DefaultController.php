@@ -4,7 +4,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Tapa;
-
+use AppBundle\Entity\Categoria;
 class DefaultController extends Controller
 {
     /**
@@ -53,6 +53,32 @@ class DefaultController extends Controller
 
                 // return $this->render('frontal/plato.html.twig', array("plato"=>$plato));
     }
+
+
+    /**
+     * @Route("/categoria/{id}", name="categoria")
+     */
+    public function categoriaAction(Request $request, $id=null)    {
+
+      if($id!=null){
+          $repository = $this->getDoctrine()->getRepository(Categoria::class);
+          $cateogoria = $repository->find($id);
+          return $this->render('frontal/categoria.html.twig', array("categoria"=>$cateogoria));
+      } else {
+        return $this->redirectToRoute('homepage');
+      }
+
+    }
+
+
+
+
+
+
+
+
+
+
 
       //*******************************************
     /**

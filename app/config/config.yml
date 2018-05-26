@@ -7,7 +7,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    plato_img_directory: '%kernel.project_dir%/web/img/uploads'
+    plato_img_directory: '%kernel.project_dir%/web/img/uploads/plato/'
+    categoria_img_directory: '%kernel.project_dir%/web/img/uploads/categoria/'
 
 framework:
     #esi: ~
@@ -37,7 +38,8 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     globals:
-        plato_img: 'img/uploads/'
+        plato_img: 'img/uploads/plato/'
+        categoria_img: 'img/uploads/categoria/'
 
 # Doctrine Configuration
 doctrine:

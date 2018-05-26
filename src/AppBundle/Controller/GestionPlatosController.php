@@ -8,8 +8,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Tapa;
+use AppBundle\Entity\Categoria;
 use AppBundle\Form\TapaType;
-
+use AppBundle\Form\CategoriaType;
 //para indicar un prefijo
 /**
  * @Route("/gestionplatos")
@@ -66,6 +67,41 @@ class GestionPlatosController extends Controller
      $tapas = $repository->findAll();
       return $this->render('gestionPlatos/nuevoPlato.html.twig', array("form"=>$form->createView()));
   }
+
+  /**
+   * @Route("/nuevacategoria", name="nuevaCategoria")
+   */
+   public function nuevaCategoriaAction(Request $request)
+   {
+     $categoria = new Categoria();
+     $form = $this->createForm(CategoriaType::class, $categoria);
+     $form->handleRequest($request);
+     if($form->isSubmitted() && $form->isValid()){
+         $categoria=$form->getData();
+         $fototype=$categoria->getFoto();
+         $fileName= $this->generateUniqueFileName().'.'. $fototype->guessExtension();
+         $fototype->move($this->getParameter('categoria_img_directory'),
+           $fileName
+         );
+         $categoria->setFoto($fileName);
+          $em = $this->getDoctrine()->getManager();
+          $em->persist($categoria);
+          $em->flush();
+          return $this->redirectToRoute('categoria', array('id'=>$categoria->getId()));
+     }
+      $repository = $this->getDoctrine()->getRepository(Categoria::class);
+      $categorias = $repository->findAll();
+       return $this->render('gestionPlatos/nuevaCategoria.html.twig', array("form"=>$form->createView()));
+   }
+
+
+
+
+
+
+
+
+
 
 
 
