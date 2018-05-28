@@ -9,8 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Tapa;
 use AppBundle\Entity\Categoria;
+use AppBundle\Entity\Ingrediente;
 use AppBundle\Form\TapaType;
 use AppBundle\Form\CategoriaType;
+use AppBundle\Form\IngredienteType;
 //para indicar un prefijo
 /**
  * @Route("/gestionplatos")
@@ -93,6 +95,31 @@ class GestionPlatosController extends Controller
       $categorias = $repository->findAll();
        return $this->render('gestionPlatos/nuevaCategoria.html.twig', array("form"=>$form->createView()));
    }
+
+
+   /**
+    * @Route("/nuevoingrediente", name="nuevoingrediente")
+    */
+    public function nuevoIngredienteAction(Request $request)
+    {
+      $ingrediente = new Ingrediente();
+      $form = $this->createForm(IngredienteType::class, $ingrediente);
+      $form->handleRequest($request);
+      if($form->isSubmitted() && $form->isValid()){
+          $ingrediente=$form->getData();
+           $em = $this->getDoctrine()->getManager();
+           $em->persist($ingrediente);
+           $em->flush();
+           return $this->redirectToRoute('ingrediente', array('id'=>$ingrediente->getId()));
+      }
+       $repository = $this->getDoctrine()->getRepository(Ingrediente::class);
+       $ingredientes = $repository->findAll();
+        return $this->render('gestionPlatos/nuevoIngrediente.html.twig', array("form"=>$form->createView()));
+    }
+
+
+
+
 
 
 

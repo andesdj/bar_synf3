@@ -9,6 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
 class TapaType extends AbstractType
@@ -18,7 +20,8 @@ class TapaType extends AbstractType
         $builder
         ->add('nombre', TextType::class)
         ->add('descripcion', CKEditorType::class)
-        ->add('ingredientes', TextareaType::class)
+        ->add('ingredientes',  EntityType::class, array ('class'=>'AppBundle:Ingrediente', 'multiple'=>true ))
+        ->add ('categoria', EntityType::class, array ('class'=>'AppBundle:Categoria' ))
         ->add('foto', FileType::class, array ('attr'=>array('onchange'=>'onChange(event)')))
         ->add('top')
         ->add('guardar', SubmitType::class, array('label'=>'Crear plato'))

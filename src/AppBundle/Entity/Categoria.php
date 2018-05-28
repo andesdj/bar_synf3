@@ -54,6 +54,9 @@ class Categoria
 
 
 
+
+
+
     /**
      * Get id
      *
@@ -146,7 +149,7 @@ class Categoria
     public function addTapa(\AppBundle\Entity\Tapa $tapa)
     {
         $this->tapas[] = $tapa;
-    
+
         return $this;
     }
 
@@ -169,4 +172,14 @@ class Categoria
     {
         return $this->tapas;
     }
+
+
+    //Conversion a cadena
+
+      public function __toString(){
+        return $this->nombre;
+      }
+
+
+
 }

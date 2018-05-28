@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Tapa;
 use AppBundle\Entity\Categoria;
+use AppBundle\Entity\Ingrediente;
 class DefaultController extends Controller
 {
     /**
@@ -70,10 +71,20 @@ class DefaultController extends Controller
 
     }
 
+    /**
+     * @Route("/ingrediente/{id}", name="ingrediente")
+     */
+    public function ingredienteAction(Request $request, $id=null)    {
 
+      if($id!=null){
+          $repository = $this->getDoctrine()->getRepository(Ingrediente::class);
+          $ingrediente = $repository->find($id);
+          return $this->render('frontal/ingrediente.html.twig', array("ingrediente"=>$ingrediente));
+      } else {
+        return $this->redirectToRoute('homepage');
+      }
 
-
-
+    }
 
 
 

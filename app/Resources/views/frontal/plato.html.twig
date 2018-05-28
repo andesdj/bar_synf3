@@ -31,7 +31,9 @@
         <p>{{plato.descripcion}}</p>
         <h3 class="my-3">Ingredientes</h3>
         <ul>
-          <li>{{plato.ingredientes}}</li>
+          {% for ingrediente in plato.ingredientes %}
+          <li>{{ingrediente}}</li>
+          {% endfor %}
         </ul>
       </div>
 

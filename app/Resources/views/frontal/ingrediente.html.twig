@@ -1,0 +1,34 @@
+{% extends 'base.html.twig '%}
+  {% block title %}
+Nuestros ingredientes
+  {% endblock %}
+{% block contenido %}
+
+
+<div class="container">
+  <h1 class="mt-4 "> <strong>Nuestros ingredientes </strong>
+    <small></small>
+  </h1>
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mb-4"> {{ingrediente.nombre}}
+      <small>{{ingrediente.id}}</small>
+    </h1>
+  <div class="container">
+
+    <!-- Inicia descripcion -->
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+      <div class="col-md-4">
+            <img class="img-fluid" src="{{asset( categoria_img~'ing.jpg' )}}" alt="">
+      </div>
+
+      <div class="col-md-4">
+        <h3 class="my-3">Descripción</h3>
+        <p>{{ingrediente.nombre}}</p>
+      </div>
+
+    </div>
+    <!-- /.FIN PLATOS -->
+{% endblock %}

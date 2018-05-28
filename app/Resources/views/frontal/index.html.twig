@@ -76,7 +76,11 @@ Pagina principal
               <a href="{{path('plato',{'id':tapa.id})}}"> {{ tapa.nombre }}</a>
             </h4>
             <p class="card-text">{{ tapa.descripcion }}</p>
-            <p class="card-text">{{ tapa.ingredientes }}</p>
+              <h4 class="card-title"> Ingredientes </h5>
+            {% for ingrediente in tapa.ingredientes %}
+                <li>{{ingrediente}}</li>
+            {% endfor %}
+
           </div>
         </div>
       </div>

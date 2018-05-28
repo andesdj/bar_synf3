@@ -9,17 +9,17 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
-class CategoriaType extends AbstractType
+class IngredienteType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
         ->add('nombre', TextType::class)
-        ->add('descripcion', CKEditorType::class)
-        ->add('foto', FileType::class, array ('attr'=>array('onchange'=>'onChange(event)')))
-        ->add('guardar', SubmitType::class, array('label'=>'Crear categoria'))
+        ->add('guardar', SubmitType::class, array('label'=>'Crear ingrediente'))
                 ;
     }
 }
