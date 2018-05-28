@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `ingrediente` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla barandes.ingrediente: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla barandes.ingrediente: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `ingrediente` DISABLE KEYS */;
 REPLACE INTO `ingrediente` (`id`, `nombre`) VALUES
 	(1, 'Lomo  de res 300 gr'),
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `ingredientes_tapas` (
   CONSTRAINT `FK_C6DD2FC0E1BE46CC` FOREIGN KEY (`ingredientes`) REFERENCES `ingrediente` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla barandes.ingredientes_tapas: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla barandes.ingredientes_tapas: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `ingredientes_tapas` DISABLE KEYS */;
 REPLACE INTO `ingredientes_tapas` (`id`, `ingredientes`) VALUES
 	(7, 2),
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `tapa` (
   CONSTRAINT `FK_998661F83397707A` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla barandes.tapa: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla barandes.tapa: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `tapa` DISABLE KEYS */;
 REPLACE INTO `tapa` (`id`, `nombre`, `descripcion`, `foto`, `fechaCreacion`, `top`, `categoria_id`) VALUES
 	(1, 'Lomo  Asado', '<p><strong>Filete de Lomillo Asado</strong> Silvestre con Vino , papas &nbsp;al vapor y &nbsp;salsas de la casa</p>', '8fc26a1f83cf3f3c19ec9b2eeee964a8.jpeg', '2018-05-25 15:45:30', 1, 2),
