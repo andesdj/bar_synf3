@@ -45,7 +45,9 @@ CREATE TABLE IF NOT EXISTS `ingrediente` (
 REPLACE INTO `ingrediente` (`id`, `nombre`) VALUES
 	(1, 'Lomo  de res 300 gr'),
 	(2, 'Trucha de 300 gr'),
-	(3, 'Tomates rojos');
+	(3, 'Tomates rojos'),
+	(4, 'Filete de Róbalo 250 gr'),
+	(5, '1 Cebolla cabezona blanca y roja');
 /*!40000 ALTER TABLE `ingrediente` ENABLE KEYS */;
 
 -- Volcando estructura para tabla barandes.ingredientes_tapas
@@ -84,11 +86,11 @@ CREATE TABLE IF NOT EXISTS `tapa` (
 /*!40000 ALTER TABLE `tapa` DISABLE KEYS */;
 REPLACE INTO `tapa` (`id`, `nombre`, `descripcion`, `foto`, `fechaCreacion`, `top`, `categoria_id`) VALUES
 	(1, 'Lomo  Asado', '<p><strong>Filete de Lomillo Asado</strong> Silvestre con Vino , papas &nbsp;al vapor y &nbsp;salsas de la casa</p>', '8fc26a1f83cf3f3c19ec9b2eeee964a8.jpeg', '2018-05-25 15:45:30', 1, 2),
-	(2, 'Sandwich trifasico', '<p>Sandwich Gourmet de Pollo, carne, cerdo, huevo asado con pan ali&ntilde;ado<br />\r\n&nbsp;</p>', '78576d6de443553baea423b63192b8ef.jpeg', '2018-05-25 16:12:16', 0, 3),
+	(2, 'Sandwich trifasico', '<p>Sandwich Gourmet de Pollo, carne, cerdo, huevo asado con pan ali&ntilde;ado<br />\r\n&nbsp;</p>', '78576d6de443553baea423b63192b8ef.jpeg', '2018-05-25 16:12:16', 1, 3),
 	(3, 'Trucha Al Horno', '<p>Trucha Al Horno &nbsp;sazonada con salsa sy especias de la casa, ali&ntilde;ada con vino blanco y cream de leche y ajo<br />\r\n&nbsp;</p>', 'dad820e97d5911d4b6c213693449c60f.jpeg', '2018-05-25 16:12:39', 1, 1),
 	(4, 'Robalo a la Marinera', '<p>Filete de robalo asado con anillos de calamar<br />\r\n&nbsp;</p>', '0a0801a8d4059316fd7711ddd55a693d.jpeg', '2018-05-25 16:13:01', 1, 1),
-	(5, 'Cazuela montañera', '<p>Frijoles al estilo Antioque&ntilde;o con &nbsp;arroz aguacate y carne&nbsp;</p>', '0ce2b30706f4480459f56438321d1a98.jpeg', '2018-05-25 16:13:28', 0, 3),
-	(6, 'Pollo asado en hierbas', '<p>Pollo asado en hierbas con papas</p>', 'f7a1358947dd79527ebb6ae71aff3ed3.jpeg', '2018-05-28 10:19:48', 0, 2),
+	(5, 'Cazuela montañera', '<p>Frijoles al estilo Antioque&ntilde;o con &nbsp;arroz aguacate y carne&nbsp;</p>', '0ce2b30706f4480459f56438321d1a98.jpeg', '2018-05-25 16:13:28', 1, 3),
+	(6, 'Pollo asado en hierbas', '<p>Pollo asado en hierbas con papas</p>', 'f7a1358947dd79527ebb6ae71aff3ed3.jpeg', '2018-05-28 10:19:48', 1, 2),
 	(7, 'Trucha con tomates', '<p>De todo</p>', 'e94a1a8dac53696ec40c1722ea001eb6.jpeg', '2018-05-28 13:51:55', 1, 1);
 /*!40000 ALTER TABLE `tapa` ENABLE KEYS */;
 

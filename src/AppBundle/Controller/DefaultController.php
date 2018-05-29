@@ -6,21 +6,32 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Tapa;
 use AppBundle\Entity\Categoria;
 use AppBundle\Entity\Ingrediente;
+
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{pagina}", name="homepage")
      */
-    public function indexAction(Request $request)    {
+    public function indexAction(Request $request, $pagina=1)    {
+        // Poner numero  de tapas qe debe mostrar en la fila
+        $numTapas=3;
+
       // Capturar el repositiorio de la tabla con la DB ,Tapa es la entidad q trae los datos
-       $repository = $this->getDoctrine()->getRepository(Tapa::class);
-       // finds *all* products trae todo
-      // $tapas = $repository->findAll();
-      //     para filtrar los recetas TOP se debe usar un findBY
-      $tapas = $repository->findByTop(1);
+       $taparepository = $this->getDoctrine()->getRepository(Tapa::class);
+          // finds *all* products trae todo
+          // $tapas = $repository->findAll();
+          // para filtrar los recetas TOP se debe usar un findBY
+          // $tapas = $taparepository->findByTop(1);
+      $query = $taparepository->createQueryBuilder('t')
+        ->where('t.top = 1 ')
+        ->setFirstResult($numTapas*($pagina-1))
+        ->setMaxResults($numTapas)
+        ->getQuery();
+  //    $tapas = $repository->findByTop(1);
+      $tapas = $query->getResult();
 
 //       var_dump($tapas);
-        return $this->render('frontal/index.html.twig', array("tapas"=>$tapas));
+        return $this->render('frontal/index.html.twig', array("tapas"=>$tapas,'paginaActual'=>$pagina));
     }
 
     /**
